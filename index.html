@@ -25,6 +25,23 @@
             margin-bottom: 20px;
             font-family: 'Comic Sans MS', cursive, sans-serif;
             animation: fadeIn 2s ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .music-icon {
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: black;
         }
 
         .container {
@@ -38,16 +55,40 @@
         }
 
         .box {
+            position: relative;
             border: 2px solid white;
-            border-radius: 15px; /* Bordes redondeados */
-            padding: 20px;
+            border-radius: 15px;
             width: 30%;
+            height: 200px; /* Tamaño fijo para las cajas */
+            overflow: hidden;
             transition: box-shadow 0.5s ease;
             animation: float 3s ease-in-out infinite;
         }
 
         .box:hover {
             box-shadow: 0 0 15px 5px #00ffff, 0 0 15px 5px #ff00ff, 0 0 15px 5px #00ff00;
+        }
+
+        .box:hover .image-cover {
+            transform: translateY(100%);
+        }
+
+        .image-cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.5s ease;
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
         }
 
         h2 {
@@ -112,7 +153,6 @@
             animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 1s;
         }
 
-        /* Animaciones LED para los nuevos contenedores */
         .box:nth-child(4) {
             animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 1.5s;
         }
@@ -124,79 +164,116 @@
         .box:nth-child(6) {
             animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 2.5s;
         }
-
     </style>
 </head>
 <body>
-    <h1>Lista de Especiales</h1>
+    <h1>
+        Lista de Especiales
+        <div class="music-icon" id="music-icon">&#9835;</div>
+    </h1>
     
     <!-- Primera fila de contenedores -->
     <div class="container">
         <div class="box">
-            <h2>Ingeniería de Software</h2>
-            <ul>
-                <li>Luis Miñano</li>
-                <li>Fabiano</li>
-                <li>Fabricio Narro</li>
-                <li>Fabricio Medina</li>
-                <li>Yonelsin</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('panetera.gif');"></div>
+            <div class="content">
+                <h2>Ingeniería de Software</h2>
+                <ul>
+                    <li>Luis Miñano</li>
+                    <li>Fabiano</li>
+                    <li>Fabricio Narro</li>
+                    <li>Fabricio Medina</li>
+                    <li>Yonelsin</li>
+                </ul>
+            </div>
         </div>
         <div class="box">
-            <h2>Gestión de Datos</h2>
-            <ul>
-                <li>Yonelsin</li>
-                <li>Luis Miñano</li>
-                <li>Fabricio Narro</li>
-                <li>Fabricio Medina</li>
-                <li>Diego</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('machete.gif');"></div>
+            <div class="content">
+                <h2>Gestión de Datos</h2>
+                <ul>
+                    <li>Yonelsin</li>
+                    <li>Luis Miñano</li>
+                    <li>Fabricio Narro</li>
+                    <li>Fabricio Medina</li>
+                    <li>Diego</li>
+                </ul>
+            </div>
         </div>
         <div class="box">
-            <h2>Redes</h2>
-            <ul>
-                <li>Diego</li>
-                <li>Yonelsin</li>
-                <li>------</li>
-                <li>Fabricio Medina</li>
-                <li>Fabricio Narro</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('triste.gif');"></div>
+            <div class="content">
+                <h2>Redes</h2>
+                <ul>
+                    <li>Diego</li>
+                    <li>Yonelsin</li>
+                    <li>------</li>
+                    <li>Fabricio Medina</li>
+                    <li>Fabricio Narro</li>
+                </ul>
+            </div>
         </div>
     </div>
-    
-    <!-- Segunda fila de contenedores -->
     <div class="container">
         <div class="box">
-            <h2>Arquitectura</h2>
-            <ul>
-                <li>Luis Miñano</li>
-                <li>Yonelsin</li>
-                <li>Jonathan Miñano</li>
-                <li>Fabricio Narro</li>
-                <li>Fabricio Medina</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('ga.gif');"></div>
+            <div class="content">
+                <h2>Arquitectura</h2>
+                <ul>
+                    <li>Nombre 1</li>
+                    <li>Nombre 2</li>
+                    <li>Nombre 3</li>
+                    <li>Nombre 4</li>
+                    <li>Nombre 5</li>
+                </ul>
+            </div>
         </div>
         <div class="box">
-            <h2>Metodología de la Investigación</h2>
-            <ul>
-                <li>Luis Miñano</li>
-                <li>Yonelsin</li>
-                <li>Jonathan Miñano</li>
-                <li>Fabricio Narro</li>
-                <li>Fabricio Medina</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('makanaky.gif');"></div>
+            <div class="content">
+                <h2>Metodología de la Investigación</h2>
+                <ul>
+                    <li>Nombre 1</li>
+                    <li>Nombre 2</li>
+                    <li>Nombre 3</li>
+                    <li>Nombre 4</li>
+                    <li>Nombre 5</li>
+                </ul>
+            </div>
         </div>
         <div class="box">
-            <h2>Actividades Integradoras</h2>
-            <ul>
-                <li>-------</li>
-                <li>-------</li>
-                <li>-------</li>
-                <li>-------</li>
-                <li>-------</li>
-            </ul>
+            <div class="image-cover" style="background-image: url('imagen6.jpg');"></div>
+            <div class="content">
+                <h2>Actividades Integradoras</h2>
+                <ul>
+                    <li>Nombre 1</li>
+                    <li>Nombre 2</li>
+                    <li>Nombre 3</li>
+                    <li>Nombre 4</li>
+                    <li>Nombre 5</li>
+                </ul>
+            </div>
         </div>
     </div>
 
+    <!-- Audio para reproducción -->
+    <audio id="audio" src="music.mp3"></audio>
+
+    <script>
+        const musicIcon = document.getElementById('music-icon');
+        const audio = document.getElementById('audio');
+
+        audio.currentTime = 48; // Iniciar desde el segundo 0:48
+
+        musicIcon.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                musicIcon.style.backgroundColor = 'green'; // Cambiar color al reproducir
+            } else {
+                audio.pause();
+                musicIcon.style.backgroundColor = 'white'; // Cambiar color al pausar
+            }
+        });
+    </script>
 </body>
 </html>
