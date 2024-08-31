@@ -15,7 +15,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100vh;
+            min-height: 100vh;
             text-align: center;
             overflow: hidden; /* Para evitar scroll */
         }
@@ -33,6 +33,7 @@
             gap: 20px;
             width: 80%;
             max-width: 1000px;
+            margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out;
         }
 
@@ -62,13 +63,13 @@
 
         @keyframes float {
             0% {
-                transform: translatey(0px);
+                transform: translateY(0px);
             }
             50% {
-                transform: translatey(-10px);
+                transform: translateY(-10px);
             }
             100% {
-                transform: translatey(0px);
+                transform: translateY(0px);
             }
         }
 
@@ -98,6 +99,7 @@
                 border-color: #0000ff;
             }
         }
+
         .box:nth-child(1) {
             animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite;
         }
@@ -109,10 +111,26 @@
         .box:nth-child(3) {
             animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 1s;
         }
+
+        /* Animaciones LED para los nuevos contenedores */
+        .box:nth-child(4) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 1.5s;
+        }
+
+        .box:nth-child(5) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 2s;
+        }
+
+        .box:nth-child(6) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 2.5s;
+        }
+
     </style>
 </head>
 <body>
     <h1>Lista de Especiales</h1>
+    
+    <!-- Primera fila de contenedores -->
     <div class="container">
         <div class="box">
             <h2>Ingeniería de Software</h2>
@@ -139,11 +157,46 @@
             <ul>
                 <li>Diego</li>
                 <li>Yonelsin</li>
-                <li> ------ </li>
+                <li>------</li>
                 <li>Fabricio Medina</li>
                 <li>Fabricio Narro</li>
             </ul>
         </div>
     </div>
+    
+    <!-- Segunda fila de contenedores -->
+    <div class="container">
+        <div class="box">
+            <h2>Arquitectura</h2>
+            <ul>
+                <li>Luis Miñano</li>
+                <li>Yonelsin</li>
+                <li>Jonathan Miñano</li>
+                <li>Fabricio Narro</li>
+                <li>Fabricio Medina</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2>Metodología de la Investigación</h2>
+            <ul>
+                <li>Luis Miñano</li>
+                <li>Yonelsin</li>
+                <li>Jonathan Miñano</li>
+                <li>Fabricio Narro</li>
+                <li>Fabricio Medina</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2>Actividades Integradoras</h2>
+            <ul>
+                <li>-------</li>
+                <li>-------</li>
+                <li>-------</li>
+                <li>-------</li>
+                <li>-------</li>
+            </ul>
+        </div>
+    </div>
+
 </body>
 </html>
