@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Especiales</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            overflow: hidden; /* Para evitar scroll */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 80%;
+            max-width: 1000px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .box {
+            border: 2px solid white;
+            border-radius: 15px; /* Bordes redondeados */
+            padding: 20px;
+            width: 30%;
+            transition: box-shadow 0.5s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .box:hover {
+            box-shadow: 0 0 15px 5px #00ffff, 0 0 15px 5px #ff00ff, 0 0 15px 5px #00ff00;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-10px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animación de brillo LED */
+        @keyframes ledGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px #ff0000;
+                border-color: #ff0000;
+            }
+            33% {
+                box-shadow: 0 0 10px #00ff00;
+                border-color: #00ff00;
+            }
+            66% {
+                box-shadow: 0 0 10px #0000ff;
+                border-color: #0000ff;
+            }
+        }
+
+        /* Aplicar animación de brillo LED a cada contenedor */
+        .box:nth-child(1) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite;
+        }
+
+        .box:nth-child(2) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 0.5s;
+        }
+
+        .box:nth-child(3) {
+            animation: float 3s ease-in-out infinite, ledGlow 2s linear infinite 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Especiales</h1>
+    <div class="container">
+        <div class="box">
+            <h2>Ingeniería de Software</h2>
+            <ul>
+                <li>Luis Miñano 1</li>
+                <li>Fabiano</li>
+                <li>Fabricio Narro 3</li>
+                <li>Fabricio Medina 4</li>
+                <li>Yonelsin</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2>Gestión de Datos</h2>
+            <ul>
+                <li>Yonelsin 1</li>
+                <li>Luis Miñano</li>
+                <li>Fabricio Narro</li>
+                <li>Fabricio Medina</li>
+                <li>Fabiano</li>
+            </ul>
+        </div>
+        <div class="box">
+            <h2>Redes</h2>
+            <ul>
+                <li>Diego</li>
+                <li>Yonelsin</li>
+                <li> ------ </li>
+                <li>Fabricio Medina</li>
+                <li>Fabricio Narro</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
